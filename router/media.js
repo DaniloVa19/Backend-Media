@@ -15,7 +15,12 @@ const router = Router();
 router.get('/', async function (req, res) {
 
     try {
-        const medios = await Media.find();
+        const medios = await Media.find()
+            .populate('director')
+            .populate('genero')
+            .populate('productora')
+            .populate('tipo')
+
         res.send(medios)
 
     } catch (error) {
