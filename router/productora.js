@@ -75,7 +75,7 @@ router.put('/:productoraId',
                 return res.status(400).json({ mensaje: errors.array() });
             }
 
-            let productora = await Productora.findById(req.params.usuarioId);
+            let productora = await Productora.findById(req.params.productoraId);
             if (!productora) {
 
                 return res.status(400).send('Productora no existe');
