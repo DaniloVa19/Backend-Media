@@ -82,11 +82,6 @@ router.put('/:generoId',
 
             }
 
-            const existeGenero = await Usuario.findOne({ nombre: req.body.nombre });
-
-            if (existeGenero) {
-                return res.status(400).send('Ya esta registrado este genero')
-            }
 
             genero.nombre = req.body.nombre;
             genero.estado = req.body.estado;
