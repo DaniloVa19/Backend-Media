@@ -71,7 +71,7 @@ router.put('/:tipoId',
                 return res.status(400).json({ mensaje: errors.array() });
             }
 
-            let tipo = await tipo.findById(req.params.tipoId);
+            let tipo = await Tipo.findById(req.params.tipoId);
             if (!tipo) {
 
                 return res.status(400).send('tipo no existe');
